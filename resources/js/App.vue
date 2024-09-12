@@ -1,18 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-/* import Header from './components/Header.vue'; */
+
+import HeaderComponent from "./src/components/HeaderComponent.vue";
+import { useAuthStore } from "./store/AuthStore";
+import { storeToRefs } from "pinia";
+const {authUser} = storeToRefs(useAuthStore())
 </script>
 
 <template>
-    <header>
-        <div>
-            <nav>
-                <RouterLink to="/">Home</RouterLink>
-                <RouterLink to="/dashboard">Dashboard</RouterLink>
-                <RouterLink to="/login">Login</RouterLink>
-            </nav>
-        </div>
-    </header>
+    
+    <HeaderComponent/>
+   
 
     <div>Mini X <br>
         Hallo {{ $name }}
