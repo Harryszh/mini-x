@@ -32,27 +32,36 @@ const handleRegister = async () => {
 </script>
 
 <template>
-  <form @submit.prevent="handleRegister">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" v-model="name" required>
-    </div>
+  <div class="container">
+      <form @submit.prevent="handleRegister">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" v-model="name" required>
+        </div>
 
-    <div class="form-group">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" v-model="email" required>
-    </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" v-model="email" required>
+        </div>
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" v-model="password" required>
-    </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" v-model="password" required>
+        </div>
 
-    <div class="form-group">
-      <label for="password_confirmation">Password</label>
-      <input type="password" id="password_confirmation" name="password_confirmation" v-model="password_confirmation" required>
-    </div>
+        <div class="form-group">
+          <label for="password_confirmation">Password</label>
+          <input type="password" id="password_confirmation" name="password_confirmation" v-model="password_confirmation" required>
+        </div>
 
-    <button type="submit">Register</button>
-  </form>
+        <button type="submit">Register</button>
+      </form>
+  </div>   
 </template>
+
+<style scoped>
+  /* .container{
+
+  } */
+
+</style>

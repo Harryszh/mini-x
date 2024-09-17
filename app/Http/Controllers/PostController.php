@@ -17,7 +17,13 @@ class PostController extends Controller
 
     public function getMyPosts(Request $request)
     {
-        return Post::where('user_id', '=', $request->user()->id);
+        $posts = Post::where('user_id', $request->user()->id)->get();
+        return response()->json(['posts' => $posts], 200);
+    }
+    public function getByUserId(Request $request, $user_id)
+    {
+        $posts = Post::where('user_id', $user_id->user()->id)->get();
+        return response()->json(['posts' => $posts], 200);
     }
 
    

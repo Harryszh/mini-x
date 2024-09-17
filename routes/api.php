@@ -10,9 +10,10 @@ Route::group(['middleware' => ['auth:sanctum']], function (){
 Route::get('/posts', [PostController::class, 'index']);
 Route::post('/posts', [PostController::class, 'store']);
 
-Route::get('/posts/{id}', [PostController::class, 'show']);
-Route::get('/posts/my-post', [UserController::class, 'getMyPosts']);
+Route::get('/posts/my-post', [PostController::class, 'getMyPosts']);
+Route::get('/posts/by-user/{user_id}', [PostController::class, 'getByUserId']);
 
+Route::get('/posts/{id}', [PostController::class, 'show']);
 Route::put('/posts/{id}', [PostController::class, 'update']);
 Route::delete('/posts/{id}', [PostController::class, 'destroy']);
 
