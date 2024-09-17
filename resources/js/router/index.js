@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import LoginView from '../views/LoginView.vue';
 /* import { useAuthStore } from '../stores/auth'; */ // Importiere den Auth-Store
 import { storeToRefs } from 'pinia';
 
@@ -11,7 +11,7 @@ const router = createRouter({
         {
             path: "/",
             name: "home",
-            component: HomeView,
+            component: LoginView,
         },
         {
             path: "/dashboard",
@@ -28,6 +28,16 @@ const router = createRouter({
             path: "/register",
             name: "register",
             component: () => import("../views/RegisterView.vue"),
+        },
+        {
+            path: "/post/create",
+            name: "post-create",
+            component: () => import("../views/PostCreateView.vue"),
+        },
+        {
+        path: "/post/edit/:id",
+        name: "post-edit",
+        component: () => import("../views/EditView.vue"),
         },
     ],
 });

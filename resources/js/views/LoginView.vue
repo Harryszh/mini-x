@@ -37,16 +37,72 @@ const handleLogin = async () => {
 </script>
 
 <template>
-    <div>
-        <h1>Login View</h1>
-        <form @submit.prevent="handleLogin">
-            <label for="email">Email:</label>
-            <input type="text" v-model="email" id="email" />
+    <div class="main">
+        <div class="box">
+            <div>
+                <h1>Live and Trending</h1>  
+                <p>Welcome back</p>    
+            </div>
+        
+            <div class="login-container">
+                <h1>Login</h1>
+                <form @submit.prevent="handleLogin" class="login-box">
+                    <label for="email">Email:</label>
+                    <input type="text" v-model="email" id="email" />
 
-            <label for="password">Password:</label>
-            <input type="password" v-model="password" id="password" />
+                    <label for="password">Password:</label>
+                    <input type="password" v-model="password" id="password" />
 
-            <button type="submit">Login</button>
-        </form>
+                    <div class="button-box">
+                        <p>Don't have an account? <RouterLink to="/register" v-if="!authUser">Sign up</RouterLink> </p>
+                        <button class="button" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        
+        </div>
     </div>
 </template>
+
+<style scoped>
+    .main{
+        background-color: #F1F1F1;
+    }
+    
+    .box{
+        display: flex;
+        flex-direction: column;
+
+        /* background-color: #FFFFFF; */
+        ;
+        padding-top: 108px;
+        padding-bottom: 445px;
+        padding-left: 372px;
+        padding-right: 372px;
+
+        
+    }
+    .login-container{
+        background-color: #FFFF;
+        padding: 42px;
+        
+    }
+    .login-box{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .button-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .button{
+        height: 38px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+
+    }
+</style>
