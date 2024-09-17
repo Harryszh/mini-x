@@ -33,6 +33,13 @@ const handleRegister = async () => {
 
 <template>
   <div class="container">
+    <div>
+      
+      <div>
+        <h1>Live and Trending</h1>
+        <p>Join now!</p>
+      </div>
+      
       <form @submit.prevent="handleRegister">
         <div class="form-group">
           <label for="name">Name</label>
@@ -53,9 +60,10 @@ const handleRegister = async () => {
           <label for="password_confirmation">Password</label>
           <input type="password" id="password_confirmation" name="password_confirmation" v-model="password_confirmation" required>
         </div>
-
+      
         <button type="submit">Register</button>
       </form>
+    </div>
   </div>   
 </template>
 
