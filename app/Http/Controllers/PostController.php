@@ -15,6 +15,11 @@ class PostController extends Controller
         return Post::all();
     }
 
+    public function getMyPosts(Request $request)
+    {
+        return Post::where('user_id', '=', $request->user()->id);
+    }
+
    
     /**
      * Store a newly created resource in storage.
@@ -25,11 +30,13 @@ class PostController extends Controller
         $validiated = $request->validate([
             'title' => 'required|string',
             'content' => 'required|string'
+            
         ]);
 
         Post::create ([
             'title' => $validiated['title'],
-            'content' => $validiated['content']
+            'content' => $validiated['content'],
+            'user_id' => $request->user()->id
         ]);
 
         /* Post::create ($request->all()); */
@@ -56,9 +63,14 @@ class PostController extends Controller
             'title' => 'required|string',
             'content' => 'required|string'
         ]);
-
+        
+        
         $post = Post::findOrFail($id);
 
+        if ($request->user()->id !== $post->user->id) {
+            return response()->json(['message' => 'You are not the owner!'], 401);
+        }
+        
         $post->update([
             'title' => $validiated['title'],
             'content' => $validiated['content']
@@ -75,6 +87,11 @@ class PostController extends Controller
     public function destroy(Request $request, $id)
     {
         $post = Post::findOrFail($id);
+        
+        if ($request->user()->id !== $post->user->id) {
+            return response()->json(['message' => 'You are not the owner!'], 401);
+        }
+        
         $post->delete();
         return response()->json(['message' => 'Post deleted successfully'], 204);
 
