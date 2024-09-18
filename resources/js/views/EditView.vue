@@ -49,6 +49,7 @@ const handleUpdate = async (id) => {
 }
 </script>
 <template>
+<div class="main">
     <div v-if="alertMessage">{{ alertMessage }}</div>
     <form method="POST" @submit.prevent="handleUpdate(post_id)">
         <div class="form-group">
@@ -62,4 +63,12 @@ const handleUpdate = async (id) => {
         <button>Update Post</button>
         <PostDeleteButton type="button" :post_id="post_id"/>
     </form>
+</div>
 </template>
+
+<style scoped>
+    .main{
+        background-color: #F9F9F9;
+        
+    }    
+</style>

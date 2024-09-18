@@ -43,7 +43,7 @@ const handleLogout = () => {
     
 </template>
 
-<style>
+<style scoped>
     .main{
         background-color: #F1F1F1;;
         padding-bottom: 302px;
