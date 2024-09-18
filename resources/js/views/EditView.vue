@@ -50,18 +50,29 @@ const handleUpdate = async (id) => {
 </script>
 <template>
 <div class="main">
-    <div v-if="alertMessage">{{ alertMessage }}</div>
-    <form method="POST" @submit.prevent="handleUpdate(post_id)">
-        <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" v-model="title" />
+    
+            <div v-if="alertMessage">{{ alertMessage }}</div>
+                <form method="POST" @submit.prevent="handleUpdate(post_id)">
+            
+            <div class="title">
+                <h1>Tweet bearbeiten</h1>
+            </div>
+        <div class="container">
+            <div class="form-group">
+                <label for="title">Titel:</label>
+                <input class="placeholder-one" type="text" id="title" name="title" v-model="title" />
+            </div>
+        
+            <div class="form-group">
+                <label for="content">Text:</label>
+                <textarea class="placeholder-2" id="content" name="content" v-model="content"></textarea>
+            </div>
+            <div class="button-container">
+                <button class="button">Update Post</button>
+        
+                <PostDeleteButton class="button" type="button" :post_id="post_id"/>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="content">Content:</label>
-            <textarea id="content" name="content" v-model="content"></textarea>
-        </div>
-        <button>Update Post</button>
-        <PostDeleteButton type="button" :post_id="post_id"/>
     </form>
 </div>
 </template>
@@ -70,5 +81,51 @@ const handleUpdate = async (id) => {
     .main{
         background-color: #F9F9F9;
         
-    }    
+    }  
+    .title{
+        display: flex;
+        justify-content: center;
+        padding-top: 108px;
+        
+    }  
+    .container{
+        background-color: #FFFF;
+        margin-left: 372px;
+        margin-right: 372px;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        
+    }
+    .placeholder-one{
+        height: 56px;
+       
+    }
+    .placeholder-2{
+        height: 152px;
+    }
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: 24px;
+        
+
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 31px;
+
+    }
+    .button{
+        background: #1D9BF0;
+        margin-left: 40px;
+        margin-right: 40px;
+
+
+    }
 </style>
