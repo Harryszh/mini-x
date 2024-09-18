@@ -25,29 +25,62 @@ const handleCreate = async () => {
 </script>
 
 <template>
-    
+    <div class="main">
         <div v-if="alertMessage">{{ alertMessage }}</div>
-    
-    <form method="POST" @submit.prevent="handleCreate">
+    <div class="container">
+        <form method="POST" @submit.prevent="handleCreate">
+            <div >
+                <div>
+                    <h1>Tweet erstellen</h1>
+                </div>
+                <p>
+                    Was möchtest Du mitteilen?
+                </p>
+                <div class="tweet-container">
+                    <div class="form-group">
+                        <label for="title">Titel</label>
+                        <input type="text" id="title" name="title" v-model="title">
+                    </div>
         
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" v-model="title">
-        </div>
+                    <div class="form-group">
+                        <label for="content">Text</label>
+                        <textarea id="content" name="content" v-model="content"></textarea>
+                    </div>
         
-        <div class="form-group">
-            <label for="content">Content</label>
-            <textarea id="content" name="content" v-model="content"></textarea>
-        </div>
-        <button>Create Post</button>
-    </form>    
+                    <button>Create Post</button>
+                </div>
+            </div>
+        </form>
+    </div> 
+    </div>   
 </template>
 
-<style>
+<style scoped>
     .form-group{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .main{
+        background-color: #F1F1F1;
+        
+
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        /* lex-direction: column; */
+        margin-left: 372px;
+        margin-right: 372px;
+        padding-bottom: 439px;
+    }
+    .tweet-container{
+        background-color: #FFFF;
+        
+    }
+    .form-group{
+        padding-top: 64px;
+        font-size: 24px;
     }
 
     

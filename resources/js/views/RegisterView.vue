@@ -32,44 +32,75 @@ const handleRegister = async () => {
 </script>
 
 <template>
-  <div class="container">
-    <div>
+  <div class="main">
+    <div class="container">
       
       <div>
         <h1>Live and Trending</h1>
         <p>Join now!</p>
       </div>
       
-      <form @submit.prevent="handleRegister">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" v-model="name" required>
-        </div>
+      <div class="registrierungs-container">
+        <form @submit.prevent="handleRegister">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="placholder" type="text" id="name" name="name" v-model="name" required>
+          </div>
 
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" v-model="email" required>
-        </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input class="placholder" type="email" id="email" name="email" v-model="email" required>
+          </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" v-model="password" required>
-        </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="placholder" type="password" id="password" name="password" v-model="password" required>
+          </div>
 
-        <div class="form-group">
-          <label for="password_confirmation">Password</label>
-          <input type="password" id="password_confirmation" name="password_confirmation" v-model="password_confirmation" required>
-        </div>
+          <div class="form-group">
+            <label for="password_confirmation">Password</label>
+            <input class="placholder" type="password" id="password_confirmation" name="password_confirmation" v-model="password_confirmation" required>
+          </div>
       
         <button type="submit">Register</button>
-      </form>
+        </form>
+      </div>
     </div>
   </div>   
 </template>
 
 <style scoped>
-  /* .container{
+.main{
+  background-color: #F1F1F1;
+}
+.container{
+        display: flex;
+        flex-direction: column;
 
-  } */
+        /* background-color: #FFFFFF; */
+        ;
+        padding-top: 108px;
+        padding-bottom: 372px;
+        padding-left: 372px;
+        padding-right: 372px;
+
+}
+.placholder{
+  display: flex;
+  flex-direction: column;
+}
+.registrierungs-container{
+  background-color: #FFFF;
+        padding: 42px;
+
+        display: flex;
+        justify-content: center;
+
+        gap: 32px;
+
+}
+.form-group{
+  gap: 32px;
+}
 
 </style>

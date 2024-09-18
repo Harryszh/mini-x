@@ -25,14 +25,45 @@ const handleLogout = () => {
 };
 </script>
 <template>
-    <div>
-        <h1>Dashboard View</h1>
-        <p>Welcome, {{ authUser.name }}</p>
-        <button @click="handleLogout">Logout</button>
-    </div>
-    <div v-for="post in posts" :key="post.id">
+
+    <div class="main">
+        <div class="title-container">
+            <p>FEED VON</p>
+            <h1>Welcome, {{ authUser.name }}</h1>
+            <!-- <button @click="handleLogout">Logout</button> -->
+        </div>
+
+        <div class="tweet-box" v-for="post in posts" :key="post.id">
             <h3>{{ post.title }}</h3>
             <p>{{ post.content }}</p>
-            <RouterLink :to="{name: 'post-edit', params:{ id: post.id }}">Edit</RouterLink>
+            <RouterLink :to="{name: 'post-edit', params:{ id: post.id }}">Tweet ansehen</RouterLink>
+        </div>
     </div>
+
+    
 </template>
+
+<style>
+    .main{
+        background-color: #F1F1F1;;
+        padding-bottom: 302px;
+    }
+    .title-container{
+        display: flex;
+        flex-direction: column;
+        padding-left: 372px;   
+        padding-top: 81px;
+        
+    }
+    .tweet-box{
+        background-color: #FFFF;
+        margin-left: 372px;
+        margin-right: 372px;
+
+        
+       /*  padding-left: 372px; 
+        padding-right: 372px ;
+        padding-bottom: 302px; */
+    }
+        
+</style>
