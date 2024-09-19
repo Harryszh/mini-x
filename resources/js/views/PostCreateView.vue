@@ -39,15 +39,15 @@ const handleCreate = async () => {
                 <div class="tweet-container">
                     <div class="form-group">
                         <label for="title">Titel</label>
-                        <input type="text" id="title" name="title" v-model="title">
+                        <input class="placeholderOne" type="text" id="title" name="title" v-model="title">
                     </div>
         
                     <div class="form-group">
                         <label for="content">Text</label>
-                        <textarea id="content" name="content" v-model="content"></textarea>
+                        <textarea class="placeholder2" id="content" name="content" v-model="content"></textarea>
                     </div>
         
-                    <button>Create Post</button>
+                    <button class="button">Tweet speichern</button>
                 </div>
             </div>
         </form>
@@ -69,18 +69,41 @@ const handleCreate = async () => {
     .container{
         display: flex;
         justify-content: center;
-        /* lex-direction: column; */
+        
         margin-left: 372px;
         margin-right: 372px;
         padding-bottom: 439px;
     }
     .tweet-container{
         background-color: #FFFF;
+        display: flex;
+        flex-direction: column;
+        
         
     }
     .form-group{
         padding-top: 64px;
         font-size: 24px;
+    }
+    .placeholder2{
+        height: 152px;
+        width: 681px;
+
+    }
+    .placeholderOne{
+        height: 56px;
+        width: 681px;
+
+    }
+    .button{
+        background: #1D9BF0;
+        border-radius: 8px;
+        width: 140px;
+        height: 38px;
+        color: #FFFF;
+        
+
+
     }
 
     
