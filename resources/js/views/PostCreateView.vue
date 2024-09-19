@@ -85,16 +85,18 @@ const handleCreate = async () => {
         padding-top: 64px;
         font-size: 24px;
     }
-    .placeholder2{
-        height: 152px;
-        width: 681px;
-
-    }
     .placeholderOne{
         height: 56px;
         width: 681px;
-
+        
+       
     }
+    .placeholder2{
+        height: 152px;
+        width: 681px;
+        
+    }
+    
     .button{
         background: #1D9BF0;
         border-radius: 8px;

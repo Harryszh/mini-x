@@ -23,6 +23,8 @@
         flex-direction: row;
         justify-content: space-between;
         bottom: 0;
+        position: fixed;
+        width: 100%;
 
 
 

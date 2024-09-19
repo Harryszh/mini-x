@@ -50,7 +50,7 @@ const handleUpdate = async (id) => {
 </script>
 <template>
 <div class="main">
-    
+    <div class="box">   
             <div v-if="alertMessage">{{ alertMessage }}</div>
                 <form method="POST" @submit.prevent="handleUpdate(post_id)">
             
@@ -59,21 +59,22 @@ const handleUpdate = async (id) => {
             </div>
         <div class="container">
             <div class="form-group">
-                <label for="title">Titel:</label>
+                <label class="tweet-text" for="title">Titel:</label>
                 <input class="placeholder-one" type="text" id="title" name="title" v-model="title" />
             </div>
         
             <div class="form-group">
-                <label for="content">Text:</label>
+                <label class="tweet-text" for="content">Text:</label>
                 <textarea class="placeholder-2" id="content" name="content" v-model="content"></textarea>
             </div>
             <div class="button-container">
-                <button class="button">Update Post</button>
+                <button class="button">Tweet updaten</button>
         
                 <PostDeleteButton class="button" type="button" :post_id="post_id"/>
             </div>
         </div>
-    </form>
+        </form>
+    </div> 
 </div>
 </template>
 
@@ -81,7 +82,12 @@ const handleUpdate = async (id) => {
     .main{
         background-color: #F9F9F9;
         
-    }  
+    } 
+    .box{
+        padding-bottom: 391px;
+
+
+    } 
     .title{
         display: flex;
         justify-content: center;
@@ -106,12 +112,16 @@ const handleUpdate = async (id) => {
     .placeholder-2{
         height: 152px;
     }
+    .tweet-text{
+        padding-left: 15px;
+    }
     .form-group{
         display: flex;
         flex-direction: column;
         margin-left: 40px;
         margin-right: 40px;
         font-size: 24px;
+        padding-top: 44px;
         
 
     }
@@ -119,6 +129,7 @@ const handleUpdate = async (id) => {
         display: flex;
         justify-content: space-between;
         padding-top: 31px;
+        padding-bottom: 26px;
 
     }
     .button{
@@ -126,6 +137,9 @@ const handleUpdate = async (id) => {
         margin-left: 40px;
         margin-right: 40px;
         border: none;
+        font-size: 18px;
+        border-radius: 8px;
+        color: white;
 
 
     }
