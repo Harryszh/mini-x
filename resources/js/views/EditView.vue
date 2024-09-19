@@ -125,6 +125,7 @@ const handleUpdate = async (id) => {
         background: #1D9BF0;
         margin-left: 40px;
         margin-right: 40px;
+        border: none;
 
 
     }
