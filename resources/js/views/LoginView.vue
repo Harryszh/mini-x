@@ -48,10 +48,10 @@ const handleLogin = async () => {
                 <h1>Login</h1>
                 <form @submit.prevent="handleLogin" class="login-box">
                     <label for="email">Email:</label>
-                    <input type="text" v-model="email" id="email" />
+                    <input class="placeholder" type="text" v-model="email" id="email" />
 
                     <label for="password">Password:</label>
-                    <input type="password" v-model="password" id="password" />
+                    <input class="placeholder" type="password" v-model="password" id="password" />
 
                     <div class="button-box">
                         <p>Don't have an account? <RouterLink to="/register" v-if="!authUser">Sign up</RouterLink> </p>
@@ -96,13 +96,26 @@ const handleLogin = async () => {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        padding-top: 38px;
     }
     .button{
         height: 38px;
-        background-color: blue;
+       
+        
+        background: #1D9BF0;
         color: white;
+        
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 8px;
+        
+        display: flex;
+        align-items: center;
+        border: none;
+        
 
+    }
+    .placeholder{
+        height: 56px;
     }
 </style>

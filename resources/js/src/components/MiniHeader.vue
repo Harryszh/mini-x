@@ -48,6 +48,8 @@
         margin-right: 152px;
         border-radius: 50px;
         font-size: 24px;
+        border: none;
+        
     }
 
 </style>
