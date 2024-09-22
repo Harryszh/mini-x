@@ -68,7 +68,7 @@ const handleUpdate = async (id) => {
                 <textarea class="placeholder-2" id="content" name="content" v-model="content"></textarea>
             </div>
             <div class="button-container">
-                <button class="button">Tweet updaten</button>
+                <button class="button">Tweet erstellen</button>
         
                 <PostDeleteButton class="button" type="button" :post_id="post_id"/>
             </div>

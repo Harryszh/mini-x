@@ -60,7 +60,7 @@ const handleCreate = async () => {
 <style scoped>
     .form-group{
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
     }
     .main{
@@ -73,7 +73,7 @@ const handleCreate = async () => {
     }
     .container{
         display: flex;
-        justify-content: center;
+        
         flex-direction: column;
         
         margin-left: 372px;
@@ -88,19 +88,20 @@ const handleCreate = async () => {
     .form-group{
         padding-top: 64px;
         font-size: 24px;
+        
 
         display: flex;
         flex-direction: column;
     }
     .placeholderOne{
-        height: 56px;
-        width: 681px;
+    height: 56px;
+        width: 881px;
         
        
     }
     .placeholder2{
         height: 152px;
-        width: 681px;
+        width: 881px;
         
     }
     .button-container{
