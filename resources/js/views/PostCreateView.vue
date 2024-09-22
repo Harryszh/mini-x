@@ -29,7 +29,7 @@ const handleCreate = async () => {
         <div v-if="alertMessage">{{ alertMessage }}</div>
     <div class="container">
         <form method="POST" @submit.prevent="handleCreate">
-            <div >
+            <div class="box">
                 <div>
                     <h1>Tweet erstellen</h1>
                 </div>
@@ -47,7 +47,9 @@ const handleCreate = async () => {
                         <textarea class="placeholder2" id="content" name="content" v-model="content"></textarea>
                     </div>
         
-                    <button class="button">Tweet speichern</button>
+                    <div class="button-container">
+                        <button class="button">Tweet speichern</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -64,11 +66,15 @@ const handleCreate = async () => {
     .main{
         background-color: #F1F1F1;
         
-
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
     }
     .container{
         display: flex;
         justify-content: center;
+        flex-direction: column;
         
         margin-left: 372px;
         margin-right: 372px;
@@ -76,14 +82,15 @@ const handleCreate = async () => {
     }
     .tweet-container{
         background-color: #FFFF;
-        display: flex;
-        flex-direction: column;
         
         
     }
     .form-group{
         padding-top: 64px;
         font-size: 24px;
+
+        display: flex;
+        flex-direction: column;
     }
     .placeholderOne{
         height: 56px;
@@ -96,6 +103,11 @@ const handleCreate = async () => {
         width: 681px;
         
     }
+    .button-container{
+        padding-top: 31px;
+        padding-left: 48px;
+        padding-bottom: 26px;
+    }
     
     .button{
         background: #1D9BF0;
@@ -103,6 +115,9 @@ const handleCreate = async () => {
         width: 140px;
         height: 38px;
         color: #FFFF;
+        border: none;
+
+        
         
 
 
