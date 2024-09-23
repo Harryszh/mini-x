@@ -115,7 +115,7 @@ const handleCreate = async () => {
         border-radius: 8px;
         width: 140px;
         height: 38px;
-        color: #FFFF;
+        color: #FFFF;  
         border: none;
 
         
